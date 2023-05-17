@@ -3,9 +3,8 @@ from streamlit_option_menu import option_menu
 import pandas as pd 
 import numpy as np
 from PIL import Image
-from sklearn.metrics import confusion_matrix, classification_report
 from sklearn.model_selection import train_test_split
-from lightgbm import LGBMClassifier
+from sklearn.ensemble import RandomForestClassifier
 from imblearn.under_sampling import NearMiss
 
 
@@ -22,7 +21,6 @@ df['is_safe'] = pd.to_numeric(df['is_safe'])
 
 df.dropna( subset=['ammonia', 'is_safe'], axis=0, inplace=True)
 
-
 # dataset splitting
 x = df.iloc[:,:-1]
 y = df.iloc[:,-1]
@@ -30,12 +28,12 @@ y = df.iloc[:,-1]
 nm = NearMiss()
 x_resample, y_resample = nm.fit_resample(x, y)
 
-xtrain, xtest, ytrain, ytest = train_test_split(x, y, test_size = 0.2, random_state = 0)
+xtrain, xtest, ytrain, ytest = train_test_split(x_resample, y_resample, test_size = 0.2, random_state = 0)
 
 
 # train the model
-lgbm = LGBMClassifier()
-lgbm.fit(xtrain, ytrain)
+rfcl = RandomForestClassifier(n_estimators=200, criterion='gini', min_samples_split=5, min_samples_leaf=2, max_features='auto', bootstrap=True, n_jobs=-1, random_state=42)
+rfcl.fit(xtrain, ytrain)
 
 
 # web title
@@ -60,7 +58,7 @@ if selected == "Home":
     st.write("# Water Q Prediction")
     st.write(
     """
-    Built with supervised machine learning algorithm  \n for classification problem called **LightGBM**.
+    Built with supervised machine learning algorithm  \n for classification called **Random Forest Classifier**.
     """
     )
 
@@ -70,7 +68,7 @@ if selected == "Home":
     
     st.markdown(
     """
-    - [Source Code](https://github.com/zeinrivo/lec-app)
+    - [Source Code](https://github.com/zeinrivo/waterq_app)
     """
     )
 
@@ -107,7 +105,7 @@ if selected == "Demo":
 
     if ok:
       x_new = [[aluminium, ammonia, arsenic, barium, cadmium, chloramine,chromium, copper, flouride, bacteria, viruses, lead,nitrates, nitrites, mercury, perchlorate, radium, selenium,silver, uranium]]
-      result = lgbm.predict(x_new)
+      result = rfcl.predict(x_new)
       if result == 0:
         st.subheader("Non Potable")
       if result == 1:
