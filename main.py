@@ -8,11 +8,8 @@ from sklearn.ensemble import RandomForestClassifier
 from imblearn.under_sampling import NearMiss
 
 
-# import dataset
 dataset = pd.read_csv("waterQuality1.csv") 
 
-
-# data prepro
 missing_value = ['#NUM!', np.nan]
 df=pd.read_csv("waterQuality1.csv", na_values = missing_value)
 
@@ -21,7 +18,6 @@ df['is_safe'] = pd.to_numeric(df['is_safe'])
 
 df.dropna( subset=['ammonia', 'is_safe'], axis=0, inplace=True)
 
-# dataset splitting
 x = df.iloc[:,:-1]
 y = df.iloc[:,-1]
 
@@ -31,7 +27,6 @@ x_resample, y_resample = nm.fit_resample(x, y)
 xtrain, xtest, ytrain, ytest = train_test_split(x_resample, y_resample, test_size = 0.2, random_state = 0)
 
 
-# train the model
 rfcl = RandomForestClassifier(n_estimators=200, criterion='gini', min_samples_split=5, min_samples_leaf=2, max_features='auto', bootstrap=True, n_jobs=-1, random_state=42)
 rfcl.fit(xtrain, ytrain)
 
@@ -58,7 +53,7 @@ if selected == "Home":
     st.write("# Water Q")
     st.write(
     """
-    Built with supervised machine learning algorithm  \n for classification called **Random Forest Classifier**.
+    Built on supervised machine learning algorithm  \n for classification called **Random Forest Classifier**.
     """
     )
 
