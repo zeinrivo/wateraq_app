@@ -38,7 +38,7 @@ rfcl.fit(xtrain, ytrain)
 
 # web title
 st.set_page_config(
-    page_title="Water Q Prediction ",
+    page_title="Water Q",
 )
 
 
@@ -55,14 +55,14 @@ with st.sidebar:
 
 # option : Home
 if selected == "Home":
-    st.write("# Water Q Prediction")
+    st.write("# Water Q")
     st.write(
     """
     Built with supervised machine learning algorithm  \n for classification called **Random Forest Classifier**.
     """
     )
 
-    image1 = Image.open('Captureqefq.JPG')
+    image1 = Image.open('random-forest.png')
     
     st.image(image1)
     
@@ -77,8 +77,8 @@ if selected == "Home":
 
 # option : Demo 
 if selected == "Demo":
-    st.title("Water Q Prediction")
-    st.write("Customize the input below with your personal data")
+    st.title("Water Q")
+    st.write("Customize the input below")
 
     aluminium = st.number_input("Aluminium")
     ammonia = st.number_input("Ammonia")
