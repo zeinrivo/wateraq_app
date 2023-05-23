@@ -86,6 +86,11 @@ if selected == "Model":
     - [Scikit-Learn](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html)
     """
     )
+    st.markdown(
+    """
+    - [Google Colaboratory](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html)
+    """
+    )
 
     
 
