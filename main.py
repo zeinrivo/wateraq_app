@@ -41,7 +41,7 @@ st.set_page_config(
 with st.sidebar:
    selected = option_menu(
         menu_title="Main Menu",  
-        options=["Home", "Demo"], 
+        options=["Home", "Demo","Model"], 
         icons=["house", "record-circle"],  
         menu_icon="cast",  # optional
         default_index=0,  # optional         
@@ -69,6 +69,26 @@ if selected == "Home":
 
     st.caption("Created by **Zein Rivo**")
 
+    
+if selected == "Model":
+    st.write("# Water Q")
+    st.write(
+    """
+    **Random Forest Classifier**.
+    """
+    )
+
+    image1 = Image.open('random-forest.png')
+    image1.thumbnail((500,500))
+    st.image(image2)
+    
+    st.markdown(
+    """
+    - [Scikit-Learn](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html)
+    """
+    )
+
+    
 
 # option : Demo 
 if selected == "Demo":
