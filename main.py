@@ -58,7 +58,7 @@ if selected == "Home":
     )
 
     image2 = Image.open('one-water.png')
-    image2.thumbnail((400,400))
+    image2.thumbnail((300,300))
     st.image(image2)
     
     st.markdown(
