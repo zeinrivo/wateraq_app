@@ -62,7 +62,7 @@ if selected == "Home":
     
     st.markdown(
     """
-    - [Source Code](https://github.com/zeinrivo/waterq_app)
+    - [Source Code](https://github.com/zeinrivo/wateraq_app/tree/main)
     """
     )
 
