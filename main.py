@@ -59,7 +59,8 @@ if selected == "Home":
 
     image1 = Image.open('random-forest.png')
     image2 = Image.open('one-water.png')
-    st.image(image2).thumbnail((400,400))
+    image2.thumbnail((400,400))
+    st.image(image2)
     st.image(image1)
     
     st.markdown(
