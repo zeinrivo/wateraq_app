@@ -102,6 +102,6 @@ if selected == "Demo":
       x_new = [[aluminium, ammonia, arsenic, barium, cadmium, chloramine,chromium, copper, flouride, bacteria, viruses, lead,nitrates, nitrites, mercury, perchlorate, radium, selenium,silver, uranium]]
       result = rfcl.predict(x_new)
       if result == 0:
-        st.subheader("Non Potable")
+        st.subheader("**NON POTABLE/POOR/CONTAMINATED**")
       if result == 1:
-        st.subheader("Potable")
+        st.subheader("**POTABLE/GOOD/CLEAN**")
