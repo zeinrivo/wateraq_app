@@ -78,7 +78,7 @@ if selected == "Model":
     )
 
     image1 = Image.open('random-forest.png')
-    image1.thumbnail((500,500))
+    image1.thumbnail((800,800))
     st.image(image1)
     
     st.markdown(
