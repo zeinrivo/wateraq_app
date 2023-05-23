@@ -128,12 +128,12 @@ if selected == "Demo":
       if result == 0:
         st.subheader("**NON POTABLE/POOR/CONTAMINATED**")
         
-        image3 = Image.open('no2.png')
+        image3 = Image.open('no2.jpg')
         image3.thumbnail((300,300))
         st.image(image3)
       if result == 1:
         st.subheader("**POTABLE/GOOD/CLEAN**")
         
-        image4 = Image.open('yes2.png')
+        image4 = Image.open('yes2.jpg')
         image4.thumbnail((300,300))
         st.image(image4)
