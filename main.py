@@ -32,7 +32,7 @@ rfcl.fit(xtrain, ytrain)
 
 # web title
 st.set_page_config(
-    page_title="Water Q",
+    page_title="WATERA Q",
 )
 
 
@@ -49,7 +49,7 @@ with st.sidebar:
 
 # option : Home
 if selected == "Home":
-    st.write("# Water Q")
+    st.write("# WATERA Q")
     st.write(
     """
     Built on supervised machine learning algorithm  \n for classification called **Random Forest Classifier**.
@@ -70,7 +70,7 @@ if selected == "Home":
 
     
 if selected == "Model":
-    st.write("# Water Q")
+    st.write("# WATERA Q")
     st.write(
     """
     **Random Forest Classifier**.
@@ -96,7 +96,7 @@ if selected == "Model":
 
 # option : Demo 
 if selected == "Demo":
-    st.title("Water Q")
+    st.title("WATERA Q")
     st.write("Customize the input below")
 
     aluminium = st.number_input("Aluminium")
