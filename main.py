@@ -127,5 +127,13 @@ if selected == "Demo":
       result = rfcl.predict(x_new)
       if result == 0:
         st.subheader("**NON POTABLE/POOR/CONTAMINATED**")
+        
+        image3 = Image.open('no.png')
+        image3.thumbnail((300,300))
+        st.image(image3)
       if result == 1:
         st.subheader("**POTABLE/GOOD/CLEAN**")
+        
+        image4 = Image.open('yes.png')
+        image4.thumbnail((300,300))
+        st.image(image4)
