@@ -88,7 +88,7 @@ if selected == "Model":
     )
     st.markdown(
     """
-    - [Google Colaboratory](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html)
+    - [Google Colaboratory](https://drive.google.com/drive/folders/1IsV7ZTiEyOao3RoPiY-TympCGeiKOkPU?usp=share_link)
     """
     )
 
