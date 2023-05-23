@@ -41,7 +41,7 @@ st.set_page_config(
 with st.sidebar:
    selected = option_menu(
         menu_title="Main Menu",  
-        options=["Home", "Demo","Model"], 
+        options=["Home","Model","Demo"], 
         icons=["house", "record-circle"],  
         menu_icon="cast",  # optional
         default_index=0,  # optional         
@@ -80,7 +80,7 @@ if selected == "Model":
 
     image1 = Image.open('random-forest.png')
     image1.thumbnail((500,500))
-    st.image(image2)
+    st.image(image1)
     
     st.markdown(
     """
